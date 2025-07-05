@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mothership Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #1e1e2f;
+    }
+
+    .card p {
+      margin: 0.5rem 0 0 0;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mothership Dashboard</h1>
+    <p>Central command for your shared tools and links</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>SkillPoint</h2>
+      <p><a href="https://skillpoint.co.nz" target="_blank">Visit SkillPoint Site</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Shared Folder</h2>
+      <p><a href="https://drive.google.com/drive/folders/..." target="_blank">Open Google Drive</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Booking Calendar</h2>
+      <p><a href="https://calendly.com/..." target="_blank">Schedule a Meeting</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Contact & Support</h2>
+      <p>Email: support@skillpoint.co.nz</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Mothership Dashboard. All rights reserved.
+  </footer>
+</body>
+</html>
