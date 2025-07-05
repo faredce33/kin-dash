@@ -1,14 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Kin Dash</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mothership Dashboard</title>
   <style>
-    body { font-family: sans-serif; padding: 2em; }
-    h1 { color: #0070f3; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .voice-drop, .drag-inbox, .task-focus, .hub-links, .hub-section {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    .voice-drop {
+      grid-column: 1 / 3;
+    }
+    .drag-inbox {
+      grid-row: 2;
+    }
+    .task-focus {
+      grid-row: 2;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .hub-links {
+      margin: 40px 20px;
+    }
+    .hub-button {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 10px 15px;
+      background-color: #0078d7;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .hub-button:hover {
+      background-color: #005fa3;
+    }
+    .hub-section {
+      display: none;
+      margin: 20px;
+    }
+    .hub-section.active {
+      display: block;
+    }
+    ul {
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to Kin Dash</h1>
-  <p>Your dashboard will live here soon.</p>
+  <div class="container">
+    <div class="voice-drop">
+      <h2>🎤 Voice Drop</h2>
+      <p>Quick-capture your thoughts. Tap to record. Transcripts and audio auto-uploaded.</p>
+    </div>
+
+    <div class="drag-inbox">
+      <h2>📥 Drag & Drop Inbox</h2>
+      <p>Drop files, screenshots, snippets here. Auto-routed to correct hub if possible.</p>
+    </div>
+
+    <div class="task-focus">
+      <h2>✅ Task Focus</h2>
+      <ul>
+        <li>Prepare IFHNZ PowerPoint</li>
+        <li>Enable transcript-to-clipboard</li>
+        <li>Auto-upload audio to OneDrive</li>
+        <li>Finalize DNS for SkillPoint site</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hub-links">
+    <h2>🚀 Quick Hub Links</h2>
+    <a class="hub-button" onclick="showSection('skillpoint')">SkillPoint HQ</a>
+    <a class="hub-button" onclick="showSection('bots')">Bots & Passive Income</a>
+    <a class="hub-button" onclick="showSection('anatomy')">Anatomy HQ</a>
+    <a class="hub-button" onclick="showSection('morning')">Morning Review</a>
+  </div>
+
+  <div id="skillpoint" class="hub-section">
+    <h2>SkillPoint HQ</h2>
+    <ul>
+      <li>📄 SDS Publishing Module</li>
+      <li>🧪 Certified Handler Training (Funeral & Industrial)</li>
+      <li>📋 Application & Evidence Package Builder</li>
+      <li>📊 Dashboard: Clients, Progress, Results</li>
+      <li>⚖️ Legal & Compliance Centre (HSWA, GHS7, etc.)</li>
+      <li>🧰 Resource Vault (Templates, Guides, Checklists)</li>
+      <li>🌐 SkillPoint Website Content Hub</li>
+      <li>📦 Packaging & Email Automation Builder</li>
+      <li>🔖 CertLogic Admin Centre</li>
+    </ul>
+  </div>
+
+  <div id="bots" class="hub-section">
+    <h2>Bots & Passive Income</h2>
+    <ul>
+      <li>🍀 Bot Performance Chart (Left-hand coin vs NZD, 0 - 20k)</li>
+      <li>🏎️ Racing Bots Visuals (Live + Upcoming)</li>
+      <li>💸 Daily Passive Income Tracker</li>
+      <li>🔄 Refresh every hour</li>
+      <li>🔎 Show Bot Types (Grid, HODL, DCA)</li>
+      <li>📊 Historical Performance Toggle</li>
+    </ul>
+  </div>
+
+  <div id="anatomy" class="hub-section">
+    <h2>Anatomy HQ</h2>
+    <ul>
+      <li>🔍 Prosection Plan + Enzyme Gel Pilot</li>
+      <li>🔹 Surgical Workshops Supported</li>
+      <li>📊 Progress Tracker</li>
+    </ul>
+  </div>
+
+  <div id="morning" class="hub-section">
+    <h2>Morning Review</h2>
+    <ul>
+      <li>⚠️ Urgent To-Do (Column 1)</li>
+      <li>🧡 Service to Others (Column 2)</li>
+      <li>📊 Passive Income Updates</li>
+      <li>🔄 Open Loops from Yesterday</li>
+      <li>⚙️ Background Processes Running</li>
+      <li>🧠 Daily Prompt: "Log overnight insights?"</li>
+    </ul>
+  </div>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.hub-section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
